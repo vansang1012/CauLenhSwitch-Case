@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ngày Trong Năm</title>
+</head>
+<body>
+<input type="text" placeholder="Nhập Tháng" id="thang"/>
+<button onclick="tinhtoan()">Tính số ngày</button>
+<p id="ngay"></p>
+<script>
+    function tinhtoan() {
+        let thang = parseInt((document.getElementById("thang")).value);
+
+        let ngay = document.getElementById("ngay");
+        switch (thang) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                ngay.innerHTML="Tháng " + thang + " có 31 ngày";
+                break;
+            case 2:
+                ngay.innerText="Tháng " + thang + " có 28 hoặc 29 ngày";
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                ngay.innerHTML="Tháng " + thang + " có 30 ngày";
+                break;
+            default:
+                ngay.innerHTML="Tháng bạn nhập đã sai rồi !";
+        }
+    }
+</script>
+</body>
+</html>
